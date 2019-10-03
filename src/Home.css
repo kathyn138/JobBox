@@ -1,0 +1,8 @@
+#home-message {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 300px;
+    border-radius: 5px;
+}
