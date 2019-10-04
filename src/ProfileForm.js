@@ -1,5 +1,5 @@
 import React from 'react';
-import JoblyApi from './JoblyApi';
+import JobBoxApi from './JobBoxApi';
 
 class ProfileForm extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class ProfileForm extends React.Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
-    let updatedInfo = await JoblyApi.editUser(this.props.user.user.username, this.state.password, this.state.firstName, this.state.lastName, this.state.photoURL, this.state.email);
+    let updatedInfo = await JobBoxApi.editUser(this.props.user.user.username, this.state.password, this.state.firstName, this.state.lastName, this.state.photoURL, this.state.email);
     this.props.updateUser(updatedInfo);
     this.props.history.push('/')
   }

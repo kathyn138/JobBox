@@ -1,6 +1,7 @@
 import React from 'react';
-import JoblyApi from './JoblyApi';
+import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
+import './LoginContainer.css'
 
 class LoginContainer extends React.PureComponent {
   constructor(props) {
@@ -21,7 +22,7 @@ class LoginContainer extends React.PureComponent {
 
   async handleSubmit(evt) {
     evt.preventDefault();
-    let token = await JoblyApi.login(this.state.username, this.state.password);
+    let token = await JobBoxApi.login(this.state.username, this.state.password);
     localStorage.setItem("token", token.token);
     this.props.history.push('/')
   }
@@ -30,13 +31,13 @@ class LoginContainer extends React.PureComponent {
     return (
       <div>
         <AuthNav />
-        <form onSubmit={this.handleSubmit}>
+        <form class="login-form" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>
             <input type="text" className="form-control"
               id="username"
               aria-describedby="username"
-              placeholder="Username"
+              placeholder="Enter Username"
               name="username"
               value={this.state.username}
               onChange={this.handleChange} />
@@ -50,7 +51,7 @@ class LoginContainer extends React.PureComponent {
               value={this.state.password}
               onChange={this.handleChange} />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn log-in">Submit</button>
         </form>
       </div>
     );

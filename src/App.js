@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './NavBar';
 import { BrowserRouter } from "react-router-dom";
 import Routes from './Routes';
-import JoblyApi from './JoblyApi'
+import JobBoxApi from './JobBoxApi'
 import background from './assets/home.png'
 
 
@@ -21,7 +21,7 @@ class App extends React.PureComponent {
 
   async componentDidMount() {
     if (localStorage.getItem('token')) {
-      let userInfo = await JoblyApi.checkToken(localStorage.token)
+      let userInfo = await JobBoxApi.checkToken(localStorage.token)
       this.setState({ currentUser: userInfo, infoLoaded: true });
     } else {
       this.setState({ currentUser: null, infoLoaded: true })
@@ -43,7 +43,7 @@ class App extends React.PureComponent {
   }
 
   async applyToJob(job) {
-    await JoblyApi.applyToJob(job.id)
+    await JobBoxApi.applyToJob(job.id)
     this.setState({currentUser: {user: {...this.state.currentUser.user, jobs: [...this.state.currentUser.user.jobs, job]}} })
   }
 

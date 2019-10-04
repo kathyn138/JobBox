@@ -1,5 +1,5 @@
 import React from 'react';
-import JoblyApi from './JoblyApi';
+import JobBoxApi from './JobBoxApi';
 import SearchBar from './SearchBar';
 import JobCard from './JobCard';
 
@@ -13,12 +13,12 @@ class JobList extends React.Component {
   }
 
   async componentDidMount() {
-    let result = await JoblyApi.searchJobs();
+    let result = await JobBoxApi.searchJobs();
     this.setState({ jobs: result });
   }
 
   async searchJobs(query) {
-    let result = await JoblyApi.searchJobs(query);
+    let result = await JobBoxApi.searchJobs(query);
     this.setState({ jobs: result });
   }
 

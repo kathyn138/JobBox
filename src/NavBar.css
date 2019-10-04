@@ -1,0 +1,13 @@
+nav {
+    background-color: #273646;
+}
+#jb-nav, nav a, nav a:hover {
+    color: white;
+}
+/* #nav-logout, #nav-login {
+    background-color: #406e8e;
+    border-color: #406e8e;
+}
+#nav-login:active {
+    box-shadow: none;
+} */

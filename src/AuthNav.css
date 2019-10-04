@@ -1,0 +1,14 @@
+#sign-up, #login {
+    color: white;
+    background-color: #406e8e
+}
+#sign-up:active, #login:active {
+    color: white;
+    background-color: #8EA8C3;
+}
+#login {
+    margin-right: 5px;
+}
+#sign-up {
+    border-radius: .25rem;
+}

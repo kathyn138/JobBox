@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import './NavBar.css';
 
 
 class NavBar extends React.PureComponent {
@@ -15,8 +16,8 @@ class NavBar extends React.PureComponent {
   render() {
     let loggedIn = localStorage.token ? true : false;
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">Jobly</NavLink>
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <NavLink className="navbar-brand" id="jb-nav" to="/">JobBox</NavLink>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -33,9 +34,9 @@ class NavBar extends React.PureComponent {
                 <NavLink className="nav-link" to="/profile">Profile</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="btn btn-primary" to="/login" onClick={this.logOut}>Logout</NavLink>
+                <NavLink to="/login" id="nav-logout" onClick={this.logOut}>Logout</NavLink>
               </li>
-            </ul> : <ul className="navbar-nav"><li className="nav-item"><NavLink className="btn btn-primary" to="/login">Login</NavLink></li></ul>}
+            </ul> : <ul className="navbar-nav"><li className="nav-item"><NavLink to="/login">Login</NavLink></li></ul>}
         </div>
       </nav>
     );

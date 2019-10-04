@@ -1,5 +1,5 @@
 import React from 'react';
-import JoblyApi from './JoblyApi';
+import JobBoxApi from './JobBoxApi';
 import JobCard from './JobCard';
 
 class CompanyDetails extends React.Component {
@@ -12,7 +12,7 @@ class CompanyDetails extends React.Component {
   }
 
   async componentDidMount() {
-    let result = await JoblyApi.getCompany(this.props.match.params.company);
+    let result = await JobBoxApi.getCompany(this.props.match.params.company);
     this.setState({company: result})
   }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import CompanyCard from './CompanyCard';
-import JoblyApi from './JoblyApi';
+import JobBoxApi from './JobBoxApi';
 
 class CompanyList extends React.PureComponent {
   constructor(props) {
@@ -13,12 +13,12 @@ class CompanyList extends React.PureComponent {
   }
 
   async componentDidMount() {
-    let result = await JoblyApi.searchCompanies();
+    let result = await JobBoxApi.searchCompanies();
     this.setState({ companies: result });
   }
 
   async searchCompanies(query) {
-    let result = await JoblyApi.searchCompanies(query);
+    let result = await JobBoxApi.searchCompanies(query);
     this.setState({ companies: result });
   }
 

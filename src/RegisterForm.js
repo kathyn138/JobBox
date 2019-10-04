@@ -1,5 +1,5 @@
 import React from 'react';
-import JoblyApi from './JoblyApi';
+import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
 
 class RegisterForm extends React.Component {
@@ -24,7 +24,7 @@ class RegisterForm extends React.Component {
 
   async handleSubmit(evt) {
     evt.preventDefault();
-    let token = await JoblyApi.register(this.state.username, this.state.password, this.state.firstName, this.state.lastName, this.state.email);
+    let token = await JobBoxApi.register(this.state.username, this.state.password, this.state.firstName, this.state.lastName, this.state.email);
     localStorage.setItem("token", token.token);
     this.props.history.push('/')
   }

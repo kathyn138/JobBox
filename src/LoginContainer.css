@@ -1,0 +1,13 @@
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    filter: drop-shadow(-4px 0px 3px rgba(43, 43, 43, 0.3));
+}
+.btn.log-in, .btn.log-in:hover {
+    color: white;
+    background-color: #406e8e;
+}
+.btn:focus {
+    outline: none;
+}
