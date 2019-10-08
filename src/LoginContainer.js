@@ -30,7 +30,7 @@ class LoginContainer extends React.PureComponent {
   render() {
     return (
       <div>
-        <AuthNav />
+        <AuthNav logInActive={true} />
         <form class="login-form" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username</label>

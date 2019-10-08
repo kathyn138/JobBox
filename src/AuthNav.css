@@ -2,13 +2,16 @@
     color: white;
     background-color: #406e8e
 }
-#sign-up:active, #login:active {
+/* #sign-up:active, #login:active {
     color: white;
     background-color: #8EA8C3;
+} */
+#login-active, #sign-up-active {
+    background-color: #8EA8C3;
 }
-#login {
+#login, #login-active {
     margin-right: 5px;
 }
-#sign-up {
+#sign-up, #sign-up-active {
     border-radius: .25rem;
 }

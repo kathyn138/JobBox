@@ -1,6 +1,7 @@
 import React from 'react';
 import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
+import './RegisterForm.css';
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -32,8 +33,8 @@ class RegisterForm extends React.Component {
   render() {
     return (
       <div>
-        <AuthNav />
-        <form onSubmit={this.handleSubmit}>
+        <AuthNav signUpActive={true} />
+        <form class ="register-form" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label for="username">Username</label>
             <input type="text" className="form-control" id="username" aria-describedby="username" placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange} />
@@ -54,7 +55,7 @@ class RegisterForm extends React.Component {
             <label for="username">Email</label>
             <input type="text" className="form-control" id="email" aria-describedby="email" placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange} />
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn register">Submit</button>
         </form>
       </div>
     );
