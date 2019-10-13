@@ -8,6 +8,9 @@
     color: white;
     background-color: #406e8e;
 }
-.btn:focus {
-    outline: none;
+.btn.register:focus {
+    box-shadow: 0px 0px 1px 2px #8EA8C3;
+}
+.register-row {
+    height: 80vh;
 }
