@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
-import NavBar from './NavBar';
 import { BrowserRouter } from "react-router-dom";
 import Routes from './Routes';
-import JobBoxApi from './JobBoxApi'
-import background from './assets/home.png'
+import JobBoxApi from './JobBoxApi';
+import backgroundPic from './assets/home.png';
 
 
 class App extends React.PureComponent {
@@ -14,23 +13,33 @@ class App extends React.PureComponent {
       currentUser: '',
       infoLoaded: false
     }
+    this.getCurrentUser = this.getCurrentUser.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
     this.checkAppliedJob = this.checkAppliedJob.bind(this);
     this.applyToJob = this.applyToJob.bind(this);
   }
 
   async componentDidMount() {
+    await this.getCurrentUser();
+  }
+
+  async getCurrentUser() {
     if (localStorage.getItem('token')) {
       let userInfo = await JobBoxApi.checkToken(localStorage.token)
       this.setState({ currentUser: userInfo, infoLoaded: true });
     } else {
       this.setState({ currentUser: null, infoLoaded: true })
     }
+  }
 
+  handleLogout() {
+    localStorage.removeItem('token');
+    this.setState({ currentUser: '' });
   }
 
   updateUserInfo(user) {
-    this.setState({currentUser: {user: {...this.state.currentUser.user, ...user} } })
+    this.setState({ currentUser: { user: { ...this.state.currentUser.user, ...user } } })
   }
 
   checkAppliedJob(jobId) {
@@ -44,23 +53,35 @@ class App extends React.PureComponent {
 
   async applyToJob(job) {
     await JobBoxApi.applyToJob(job.id)
-    this.setState({currentUser: {user: {...this.state.currentUser.user, jobs: [...this.state.currentUser.user.jobs, job]}} })
+    this.setState({
+      currentUser:
+      {
+        user: {
+          ...this.state.currentUser.user,
+          jobs: [...this.state.currentUser.user.jobs, job]
+        }
+      }
+    })
   }
 
   render() {
     if (!this.state.infoLoaded) {
       return "Loading..."
-    } else {
-      return (
-        <div className="app" style={{backgroundImage: `url(${background})`}}>
-        <BrowserRouter>
-          <div className="main">
-            <Routes user={this.state.currentUser} checkApplied={this.checkAppliedJob} applyToJob={this.applyToJob} updateUser={this.updateUserInfo}/>
-          </div>
-        </BrowserRouter>
-        </div>
-      )
     }
+    
+    let background = this.state.currentUser ? "" : backgroundPic;
+    
+    return (
+      <div className="app" style={{ backgroundImage: `url(${background})` }}>
+        <BrowserRouter>
+          <Routes user={this.state.currentUser} checkApplied={this.checkAppliedJob}
+            applyToJob={this.applyToJob} updateUser={this.updateUserInfo} 
+            getCurrentUser={this.getCurrentUser} 
+            handleLogout={this.handleLogout} />
+        </BrowserRouter>
+      </div>
+    )
+
   }
 }
 

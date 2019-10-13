@@ -1,13 +1,10 @@
 nav {
     background-color: #273646;
+    filter: drop-shadow(-4px 0px 5px rgba(43, 43, 43, 0.6));
 }
-#jb-nav, nav a, nav a:hover {
+#jb-nav, nav a, nav a:hover, .nav-item {
     color: white;
 }
-/* #nav-logout, #nav-login {
-    background-color: #406e8e;
-    border-color: #406e8e;
+#nav-login {
+    font-size: 16px;
 }
-#nav-login:active {
-    box-shadow: none;
-} */

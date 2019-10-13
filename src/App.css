@@ -4,7 +4,7 @@
 
 .app {
   height: 100vh;
-  background-size: contain;
+  background-size: cover;
 }
 
 .App-header {
@@ -22,6 +22,3 @@
   color: #09d3ac;
 }
 
-.container {
-  width: 800px;
-}

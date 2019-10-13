@@ -15,3 +15,6 @@
 #sign-up, #sign-up-active {
     border-radius: .25rem;
 }
+#login:focus, #sign-up:focus {
+    box-shadow: 0px 0px 1px 2px #8EA8C3;
+}
