@@ -25,9 +25,12 @@ class CompanyList extends React.PureComponent {
   render() {
     let companies = this.state.companies ? this.state.companies.map(c => <CompanyCard company={c} key={c.handle}/>) : null;
     return (
-      <div>
+      <div className="row justify-content-center align-items-center">
+        <div className="col-8">
+          <h1 className="text-center">Companies</h1>
         <SearchBar search={this.searchCompanies}/>
         {companies}
+        </div>
       </div>
     );
   }
