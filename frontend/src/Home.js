@@ -18,7 +18,7 @@ class Home extends React.PureComponent {
               <span className="logged-in-msg">Let's find you a job</span>
               <Link className="btn btn-primary" id="home-jobs-button" to="/jobs">Job Postings</Link>
               <Link className="btn btn-primary" id="home-companies-button" to="/companies">Companies</Link>
-              <img className="logged-in-home-img" src={loggedInHome}></img>
+              <img className="logged-in-home-img" src={loggedInHome} alt="collaborating on laptop"></img>
             </div>
             : <div className="home-not-logged-in justify-content-center">
               <h2>JobBox</h2>
