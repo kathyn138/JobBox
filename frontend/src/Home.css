@@ -5,7 +5,7 @@
     background-color: rgba(255, 255, 255, 0.9);
     height: 300px;
     border-radius: 5px;
-    box-shadow: -4px 0px 10px rgba(43, 43, 43, 0.6);
+    box-shadow: -4px 0px 10px rgba(43, 43, 43, 0.5);
 }
 .home-logged-in {
     position: relative;

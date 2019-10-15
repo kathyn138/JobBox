@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import loggedInHome from './assets/logged-in-home.png';
 
 
 class Home extends React.PureComponent {
@@ -17,7 +18,7 @@ class Home extends React.PureComponent {
               <span className="logged-in-msg">Let's find you a job</span>
               <Link className="btn btn-primary" id="home-jobs-button" to="/jobs">Job Postings</Link>
               <Link className="btn btn-primary" id="home-companies-button" to="/companies">Companies</Link>
-              <img className="logged-in-home-img" src="https://cdn.discordapp.com/attachments/444022018908749837/632800420049190922/logged-in-home.png"></img>
+              <img className="logged-in-home-img" src={loggedInHome}></img>
             </div>
             : <div className="home-not-logged-in justify-content-center">
               <h2>JobBox</h2>
