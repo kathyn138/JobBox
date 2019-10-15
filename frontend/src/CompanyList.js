@@ -23,8 +23,8 @@ class CompanyList extends React.PureComponent {
   }
 
   render() {
-    let companies = this.state.companies ? this.state.companies.map(c =>
-      <CompanyCard company={c} key={c.handle} />) : null;
+    let companies = this.state.companies.length ? this.state.companies.map(c =>
+      <CompanyCard company={c} key={c.handle} />) : "Sorry, no results were found!";
     return (
       <div className="row justify-content-center align-items-center">
         <div className="col-8">

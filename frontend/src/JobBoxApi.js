@@ -74,7 +74,7 @@ class JoblyApi {
   }
   
   static async applyToJob(id, state) {
-    let res = await this.request(`jobs/${id}/apply`, {state}, 'post')
+    await this.request(`jobs/${id}/apply`, {state}, 'post')
   }
 }
 
