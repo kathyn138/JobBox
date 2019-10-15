@@ -23,11 +23,16 @@ class JobList extends React.Component {
   }
 
   render() {
-    let jobs = this.state.jobs.map(job => <JobCard applyToJob={this.props.applyToJob} checkApplied={this.props.checkApplied} job={job} key={job.id} />);
+    let jobs = this.state.jobs.length ? this.state.jobs.map(job => <JobCard
+      applyToJob={this.props.applyToJob} checkApplied={this.props.checkApplied}
+      job={job} key={job.id} />) : "Sorry, no results were found!"
     return (
-      <div>
-        <SearchBar search={this.searchJobs} />
-        {jobs}
+      <div className="row justify-content-center align-items-center">
+        <div className="col-8">
+          <h1 className="text-center">Jobs</h1>
+          <SearchBar search={this.searchJobs} />
+          {jobs}
+        </div>
       </div>
     );
   }

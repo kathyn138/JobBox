@@ -1,4 +1,5 @@
 import React from 'react';
+import './JobCard.css';
 
 class JobCard extends React.Component {
   constructor(props) {
@@ -20,7 +21,9 @@ class JobCard extends React.Component {
               <h5 className="card-title">{title}</h5>
               <p className="card-text">Salary: {salary}</p>
               <p className="card-text">Equity: {equity}</p>
-              {this.props.checkApplied(this.props.job.id) ? <button className="btn btn-danger selected" onClick={this.handleClick}>Applied</button> : <button className="btn btn-danger selected" onClick={this.handleClick}>Apply</button>}
+              {this.props.checkApplied(this.props.job.id) ? 
+              <button className="btn applied selected" onClick={this.handleClick}>Applied</button> 
+              : <button className="btn apply selected" onClick={this.handleClick}>Apply</button>}
             </div>
           </div>
         </div>
