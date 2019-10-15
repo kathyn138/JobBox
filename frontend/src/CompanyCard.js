@@ -5,7 +5,7 @@ class CompanyCard extends React.Component {
   render() {
     let { logo_url, name, description, handle } = this.props.company
     return (
-      <Link to={`/companies/${handle}`} className="text-muted"><div className="card mb-3" style={{ maxWidth: "800px" }}>
+      <Link to={`/companies/${handle}`} className="text-muted"><div className="card mb-3">
         <div className="row no-gutters">
           <div className="col-md-2">
             <img src={logo_url} className="card-img" alt="..." />
