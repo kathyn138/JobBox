@@ -6,6 +6,8 @@ Users can create an account, log-in, search for companies, search for jobs and a
 
 JobBox is [live on Heroku](google.com).
 
+![Alt text](frontend/src/assets/landing.pngraw=true "Landing")
+
 ## Installation 
 
 Use npm to install dependencies in the frontend and backend folders. 
