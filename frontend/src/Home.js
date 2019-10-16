@@ -8,7 +8,6 @@ class Home extends React.PureComponent {
 
   render() {
     let loggedIn = localStorage.getItem('token') ? true : false;
-
     return (
       <div className="row justify-content-center align-items-center home-row">
         <div className="col-6 text-center">

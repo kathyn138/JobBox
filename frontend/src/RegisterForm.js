@@ -28,6 +28,7 @@ class RegisterForm extends React.Component {
     let token = await JobBoxApi.register(this.state.username, this.state.password,
       this.state.firstName, this.state.lastName, this.state.email);
     localStorage.setItem("token", token.token);
+    await this.props.getCurrentUser();
     this.props.history.push('/')
   }
 

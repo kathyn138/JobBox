@@ -29,7 +29,7 @@ class App extends React.PureComponent {
       let userInfo = await JobBoxApi.checkToken(localStorage.token)
       this.setState({ currentUser: userInfo, infoLoaded: true });
     } else {
-      this.setState({ currentUser: null, infoLoaded: true })
+      this.setState({ currentUser: '', infoLoaded: true })
     }
   }
 
