@@ -137,54 +137,54 @@ COPY public.applications (username, job_id, state, created_at) FROM stdin;
 --
 
 COPY public.companies (handle, name, num_employees, description, logo_url) FROM stdin;
-edwards-lee-and-reese	Edwards, Lee and Reese	744	To much recent it reality coach decision Mr. Dog language evidence minute either deep situation pattern. Other cold bad loss surface real show.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-sellers-bryant	Sellers-Bryant	369	Language discussion mission soon wait according executive. Financial say husband anyone money politics. Dinner action purpose mouth environment I white.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-bauer-gallagher	Bauer-Gallagher	862	Difficult ready trip question produce produce someone.	
-arnold-berger-and-townsend	Arnold, Berger and Townsend	795	Kind crime at perhaps beat. Enjoy deal purpose serve begin or thought. Congress everything miss tend.	
-miller-woods-and-hernandez	Miller, Woods and Hernandez	444	Including theory protect reveal energy himself probably. Test leave mother area however.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-davis-davis	Davis-Davis	23	Career participant difficult. Decide claim particular century society. Question growth two staff.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+edwards-lee-and-reese	Edwards, Lee and Reese	744	To much recent it reality coach decision Mr. Dog language evidence minute either deep situation pattern. Other cold bad loss surface real show.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+sellers-bryant	Sellers-Bryant	369	Language discussion mission soon wait according executive. Financial say husband anyone money politics. Dinner action purpose mouth environment I white.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+bauer-gallagher	Bauer-Gallagher	862	Difficult ready trip question produce produce someone.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+arnold-berger-and-townsend	Arnold, Berger and Townsend	795	Kind crime at perhaps beat. Enjoy deal purpose serve begin or thought. Congress everything miss tend.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+miller-woods-and-hernandez	Miller, Woods and Hernandez	444	Including theory protect reveal energy himself probably. Test leave mother area however.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+davis-davis	Davis-Davis	23	Career participant difficult. Decide claim particular century society. Question growth two staff.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 jackson-and-sons	Jackson and Sons	649	President couple political sit create.	
 smith-llc	Smith LLC	908	Statement use per mission method. Order truth method.	
 humphrey-llc	Humphrey LLC	678	Agent actually able paper nor. Tell then court full agree without assume.	
 salas-group	Salas Group	624	Central whom mouth partner bring newspaper special city. Show second cost newspaper can early play.	
-morgan-sullivan	Morgan-Sullivan	409	Own once artist part put authority wait. Focus free even. Why friend civil visit.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+morgan-sullivan	Morgan-Sullivan	409	Own once artist part put authority wait. Focus free even. Why friend civil visit.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 perez-miller	Perez-Miller	298	Space one approach wife son. Themselves give necessary follow employee return feel. Step animal doctor sign water early.	
-carr-wells-and-jones	Carr, Wells and Jones	27	Human medical throw book pick possible. Maybe yeah word beat treatment impact campaign.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+carr-wells-and-jones	Carr, Wells and Jones	27	Human medical throw book pick possible. Maybe yeah word beat treatment impact campaign.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 thomas-and-sons	Thomas and Sons	51	Book detail scene continue. Art strategy because list two.	
 mitchell-brown	Mitchell-Brown	288	Republican truth church generation voice price issue.	
 watson-davis	Watson-Davis	819	Year join loss.	
-logan-miller	Logan-Miller	429	Pattern hand where never. Social across ability which structure.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-taylor-yu-and-lee	Taylor, Yu and Lee	226	Down bag serve. Officer season company.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+logan-miller	Logan-Miller	429	Pattern hand where never. Social across ability which structure.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+taylor-yu-and-lee	Taylor, Yu and Lee	226	Down bag serve. Officer season company.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 hudson-inc	Hudson Inc	627	End now meet staff. Long government force why bar. Provide bring hope staff almost many be a.	
 mejia-scott-and-ryan	Mejia, Scott and Ryan	628	General traditional late situation discussion dog. Before best up strategy about direction.	
-scott-smith	Scott-Smith	993	Room newspaper foot. Student daughter their themselves top almost near. Wait time recently it street follow medical nothing.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+scott-smith	Scott-Smith	993	Room newspaper foot. Student daughter their themselves top almost near. Wait time recently it street follow medical nothing.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 norman-harvey	Norman-Harvey	837	Drop along test material education. Opportunity forget campaign federal certainly total hair.	
-hall-mills	Hall-Mills	266	Change stage tell note hundred. Worry where program wait.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-gillespie-smith	Gillespie-Smith	302	Candidate ability democratic make drug. Player themselves like front. Over through style loss win very when.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-boyd-evans	Boyd-Evans	698	Build respond generation tree. No five keep. Happy medical back fine focus suffer modern.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+hall-mills	Hall-Mills	266	Change stage tell note hundred. Worry where program wait.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+gillespie-smith	Gillespie-Smith	302	Candidate ability democratic make drug. Player themselves like front. Over through style loss win very when.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+boyd-evans	Boyd-Evans	698	Build respond generation tree. No five keep. Happy medical back fine focus suffer modern.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 martinez-daniels	Martinez-Daniels	12	Five source market nation. Drop foreign raise pass.	
-willis-henson-and-miller	Willis, Henson and Miller	821	About dream practice. Father significant senior health within four.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-wiggins-frederick-and-boyer	Wiggins, Frederick and Boyer	298	Institution structure say argue bit. Each option high executive easy pattern. Majority white hour there reach drive produce.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-stone-stewart	Stone-Stewart	459	Require successful family but. Traditional article late eight lose common send budget. Better opportunity law country various represent strong probably.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-mueller-moore	Mueller-Moore	932	Edge may report though least pressure likely. Cost short appear program hair seven.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-rivas-llc	Rivas LLC	552	Would road lot research wide mouth. Resource along office drug.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+willis-henson-and-miller	Willis, Henson and Miller	821	About dream practice. Father significant senior health within four.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+wiggins-frederick-and-boyer	Wiggins, Frederick and Boyer	298	Institution structure say argue bit. Each option high executive easy pattern. Majority white hour there reach drive produce.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+stone-stewart	Stone-Stewart	459	Require successful family but. Traditional article late eight lose common send budget. Better opportunity law country various represent strong probably.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+mueller-moore	Mueller-Moore	932	Edge may report though least pressure likely. Cost short appear program hair seven.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+rivas-llc	Rivas LLC	552	Would road lot research wide mouth. Resource along office drug.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 garner-michael	Garner-Michael	940	Necessary thousand parent since discuss director. Visit machine skill five the.	
-owen-newton	Owen-Newton	953	Red compare try way. Bed standard again number wrong force. Stop exactly agent product economy someone. North describe site manager employee customer.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+owen-newton	Owen-Newton	953	Red compare try way. Bed standard again number wrong force. Stop exactly agent product economy someone. North describe site manager employee customer.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 jackson-davila-and-conley	Jackson, Davila and Conley	813	Consider with build either.	
 robbins-marsh-and-martin	Robbins, Marsh and Martin	709	Now never worry usually another ability concern hair. Fly lot six protect participant. Teach through head.	
-garcia-ray	Garcia-Ray	217	Laugh low follow fear. Politics main size fine.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-baker-santos	Baker-Santos	225	Compare certain use. Writer time lay word garden. Resource task interesting voice.	
+garcia-ray	Garcia-Ray	217	Laugh low follow fear. Politics main size fine.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+baker-santos	Baker-Santos	225	Compare certain use. Writer time lay word garden. Resource task interesting voice.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 ingram-ferguson-and-rubio	Ingram, Ferguson and Rubio	753	Human summer field mean impact could exactly. Business read north project will. Left dream use Democrat.	
-burton-ltd	Burton Ltd	610	Cover couple speech bar cell measure movement finally. Nation pull inside.	
-anderson-arias-and-morrow	Anderson, Arias and Morrow	245	Somebody program how I. Face give away discussion view act inside. Your official relationship administration here.	
-foster-rice	Foster-Rice	901	Either relate himself. Source TV data one general. Actually than seat eight.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+burton-ltd	Burton Ltd	610	Cover couple speech bar cell measure movement finally. Nation pull inside.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+anderson-arias-and-morrow	Anderson, Arias and Morrow	245	Somebody program how I. Face give away discussion view act inside. Your official relationship administration here.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+foster-rice	Foster-Rice	901	Either relate himself. Source TV data one general. Actually than seat eight.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 weber-hernandez	Weber-Hernandez	681	Contain product south picture scientist.	
 moore-plc	Moore PLC	100	Magazine thing eight shake window might they organization. Environmental it bag green.	
-ayala-buchanan	Ayala-Buchanan	309	Make radio physical southern. His white on attention kitchen market upon. Represent west open seven. Particularly subject billion much score thank bag somebody.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-russo-gillespie-and-conrad	Russo, Gillespie and Conrad	398	South sound knowledge guy. Up I size anyone issue drop. Agent light significant mouth while.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
-reynolds-greene	Reynolds-Greene	343	Effect win area officer office economy. Congress travel would resource difficult. Nice president mind dinner.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+ayala-buchanan	Ayala-Buchanan	309	Make radio physical southern. His white on attention kitchen market upon. Represent west open seven. Particularly subject billion much score thank bag somebody.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+russo-gillespie-and-conrad	Russo, Gillespie and Conrad	398	South sound knowledge guy. Up I size anyone issue drop. Agent light significant mouth while.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
+reynolds-greene	Reynolds-Greene	343	Effect win area officer office economy. Congress travel would resource difficult. Nice president mind dinner.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 hall-davis	Hall-Davis	749	Adult go economic off into. Suddenly happy according only common. Father plant wrong free traditional.	
-pugh-ltd	Pugh Ltd	87	Believe reflect perform TV son.	https://cdn.discordapp.com/attachments/444022018908749837/633505560716902419/building.png
+pugh-ltd	Pugh Ltd	87	Believe reflect perform TV son.	https://drive.google.com/uc?id=1o03GSQtTwCzXwSitaYWJfkn5eub0rSE7
 graham-herring-and-lane	Graham, Herring and Lane	188	Enough attack return. Fall gas someone her another point those. Star public painting show concern.	
 erickson-inc	Erickson Inc	267	Interesting environment owner beautiful school politics. General friend hair player dinner last administration teacher.	
 \.
