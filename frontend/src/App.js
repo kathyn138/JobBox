@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import Routes from './Routes';
 import JobBoxApi from './JobBoxApi';
-import backgroundPic from './assets/home.png';
+import backgroundPic from './assets/landing-background.png';
 
 
 class App extends React.PureComponent {
