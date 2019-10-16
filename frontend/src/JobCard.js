@@ -14,7 +14,7 @@ class JobCard extends React.Component {
   render() {
     let { title, salary, equity } = this.props.job
     return (
-      <div className="card mb-3" style={{ maxWidth: "800px" }}>
+      <div className="card mb-3">
         <div className="row no-gutters">
           <div className="col-md-12">
             <div className="card-body">
