@@ -32,7 +32,7 @@ class Routes extends React.PureComponent {
             <PrivateRoute exact path="/jobs" component={JobList} applyToJob={this.props.applyToJob}
               checkApplied={this.props.checkApplied} user={this.props.user} />
             <PrivateRoute exact path="/profile" component={Profile} user={this.props.user}
-              updateUser={this.props.updateUser} />
+              updateUser={this.props.updateUser} getCurrentUser={this.props.getCurrentUser} />
             <Redirect to="/" />
           </Switch>
         </div>
