@@ -4,7 +4,7 @@ JobBox is a full stack job posting and job application website built with React,
 
 Users can create an account, log-in, search for companies, search for jobs and apply to them.
 
-JobBox is [live on Heroku](google.com).
+JobBox is [live on Heroku](https://jobbox-io.herokuapp.com).
 
 ![Alt text](frontend/src/assets/landing--screenshot?raw=true "Landing")
 ![Alt text](frontend/src/assets/login-screenshot.png?raw=true "Log In Page")
