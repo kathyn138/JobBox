@@ -15,10 +15,19 @@ JobBox is [live on Heroku](https://jobbox-io.herokuapp.com).
 
 ## Installation 
 
-Use npm to install dependencies in the frontend and backend folders. 
+Use npm to install dependencies and start servers for the frontend and backend. 
 
-`npm i`
+Backend Setup: 
 
-Use npm to start frontend and backend servers. 
+```
+cd backend
+npm install
+npm start
+```
 
-`npm start`
+Frontend Setup: 
+```
+cd frontend
+npm install 
+npm start
+```
