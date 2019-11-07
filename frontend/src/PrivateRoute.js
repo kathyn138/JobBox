@@ -9,12 +9,4 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   )} />
 )
 
-// PrivateRoute checks whether or not a user is logged in 
-// and returns either a Component or a Redirect. 
-// I'm proud of this as this replaces 4 if else statements
-// in Routes.js and the implementation was technically
-// challenging. The use of PrivateRoute also improves
-// code readability and separation of concerns. 
-
-
 export default PrivateRoute;
