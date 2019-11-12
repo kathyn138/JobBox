@@ -55,6 +55,7 @@ npm test
 - PostgreSQL
 - Enzyme
 - Bcrypt
+- JSONSchema
 
 
 ## Component Hierarchy 
