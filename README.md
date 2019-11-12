@@ -16,6 +16,7 @@ Front end unit tests are written with Enzyme.
 - [Testing](https://github.com/kathyn262/JobBox#testing)
 - [Technologies](https://github.com/kathyn262/JobBox#technologies)
 - [Component Hierarchy](https://github.com/kathyn262/JobBox#component-hierarchy)
+- [Future Implementation](https://github.com/kathyn262/JobBox#future-implementation)
 
 ## Installation 
 
@@ -77,3 +78,8 @@ App
     └─┬ Profile
       └── ProfileForm  
 ```
+
+## Future Implementation
+- Display message on front end for wrong user credentials 
+- Add visual indication for current page user is on 
+- Back end testing 
