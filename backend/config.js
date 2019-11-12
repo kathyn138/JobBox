@@ -10,15 +10,15 @@ const PORT = +process.env.PORT || 3001;
 // database is:
 //
 // - on Heroku, get from env var DATABASE_URL
-// - in testing, 'jobly-test'
-// - else: 'jobly'
+// - in testing, 'jobbox-test'
+// - else: 'jobbox'
 
 let DB_URI;
 
 if (process.env.NODE_ENV === "test") {
-  DB_URI = "react-jobly-test";
+  DB_URI = "jobbox-test";
 } else {
-  DB_URI  = process.env.DATABASE_URL || 'react-jobly';
+  DB_URI  = process.env.DATABASE_URL || 'jobbox';
 }
 
 console.log("Using database", DB_URI);
