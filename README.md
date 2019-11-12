@@ -57,7 +57,6 @@ npm test
 - Bcrypt
 
 
-
 ## Component Hierarchy 
 ```
 App
