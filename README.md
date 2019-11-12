@@ -9,25 +9,9 @@ JobBox is [live on Heroku](https://jobbox-io.herokuapp.com).
 ![Alt text](frontend/src/assets/jobbox-demo.gif "Demo Gif")
 ![Alt text](frontend/src/assets/searchedjobs-screenshot?raw=true "Searched Jobs")
 
-## Component Hierarchy 
-```
-App
-└─┬ Routes
-  ├── NavBar
-  ├── Home
-  ├── LoginContainer
-  ├── RegisterForm
-  └─┬ PrivateRoutes 
-    ├─┬ CompanyList
-    │ ├── Search
-    │ └── CompanyCard 
-    ├─┬ CompanyDetail
-    │ └── JobCard 
-    ├─┬ Jobs
-    │ ├── Search
-    │ └── JobCard
-    └── Profile
-```
+## Table Of Contents
+- [Installation](https://github.com/kathyn262/JobBox#installation)
+- [Component Hierarchy](https://github.com/kathyn262/JobBox#component-hierarchy)
 
 ## Installation 
 
@@ -46,4 +30,24 @@ Frontend Setup:
 cd frontend
 npm install 
 npm start
+```
+
+## Component Hierarchy 
+```
+App
+└─┬ Routes
+  ├── NavBar
+  ├── Home
+  ├── LoginContainer
+  ├── RegisterForm
+  └─┬ PrivateRoutes 
+    ├─┬ CompanyList
+    │ ├── SearchBar
+    │ └── CompanyCard 
+    ├── CompanyDetails
+    ├─┬ JobList
+    │ ├── SearchBar
+    │ └── JobCard
+    └─┬ Profile
+      └── ProfileForm  
 ```
