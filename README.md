@@ -2,15 +2,19 @@
 
 JobBox is a full stack job posting and job application website built with React, Express, and PostgreSQL. 
 
-Users can create an account, log-in, search for companies, search for jobs and apply to them.
+Users can create an account, log-in, search for companies, search for jobs and apply to them. 
 
 JobBox is [live on Heroku](https://jobbox-io.herokuapp.com).
+
+Front end unit tests are written with Enzyme.
 
 ![Alt text](frontend/src/assets/jobbox-demo.gif "Demo Gif")
 ![Alt text](frontend/src/assets/searchedjobs-screenshot?raw=true "Searched Jobs")
 
 ## Table Of Contents
 - [Installation](https://github.com/kathyn262/JobBox#installation)
+- [Testing](https://github.com/kathyn262/JobBox#testing)
+- [Technologies](https://github.com/kathyn262/JobBox#technologies)
 - [Component Hierarchy](https://github.com/kathyn262/JobBox#component-hierarchy)
 
 ## Installation 
@@ -31,6 +35,28 @@ cd frontend
 npm install 
 npm start
 ```
+
+## Testing 
+
+Front end unit tests are written with Enzyme. Run the tests with the following commands: 
+
+```
+cd frontend
+npm test
+```
+
+## Technologies
+- React
+- Create-React-App
+- Axios
+- HTML/CSS
+- Bootstrap
+- Node/Express
+- PostgreSQL
+- Enzyme
+- Bcrypt
+
+
 
 ## Component Hierarchy 
 ```
