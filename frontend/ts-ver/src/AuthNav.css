@@ -1,0 +1,20 @@
+#sign-up, #login {
+    color: white;
+    background-color: #406e8e
+}
+/* #sign-up:active, #login:active {
+    color: white;
+    background-color: #8EA8C3;
+} */
+#login-active, #sign-up-active {
+    background-color: #8EA8C3;
+}
+#login, #login-active {
+    margin-right: 5px;
+}
+#sign-up, #sign-up-active {
+    border-radius: .25rem;
+}
+#login:focus, #sign-up:focus {
+    box-shadow: 0px 0px 1px 2px #8EA8C3;
+}
