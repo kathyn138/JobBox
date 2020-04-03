@@ -4,7 +4,7 @@ import './AuthNav.css';
 
 type AuthNavProps ={
   logInActive: boolean;
-  signUpActive: boolean;
+  signUpActive?: boolean;
 };
 
 class AuthNav extends React.Component<AuthNavProps> {

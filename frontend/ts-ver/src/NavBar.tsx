@@ -2,9 +2,12 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import './NavBar.css';
 
+type NavBarProps = {
+  handleLogout: () => void;
+}
 
-class NavBar extends React.PureComponent {
-  constructor(props) {
+class NavBar extends React.PureComponent<NavBarProps> {
+  constructor(props: NavBarProps) {
     super(props);
     this.logOut = this.logOut.bind(this);
   }

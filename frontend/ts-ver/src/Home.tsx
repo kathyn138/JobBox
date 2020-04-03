@@ -3,8 +3,15 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import loggedInHome from './assets/logged-in-home.png';
 
+type HomeProps = {
+  user: {
+    user: {
+      first_name: string; 
+    };
+  };
+};
 
-class Home extends React.PureComponent {
+class Home extends React.PureComponent<HomeProps> {
 
   render() {
     let loggedIn = localStorage.getItem('token') ? true : false;

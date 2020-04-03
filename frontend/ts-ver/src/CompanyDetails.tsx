@@ -5,7 +5,7 @@ import JobCard from './JobCard';
 type CompanyDetailsProps = {
   checkApplied: (jobid: number) => boolean;
   applyToJob: (job: object) => void;
-};
+}
 
 type CompanyDetailsState = {
   company: {
@@ -16,14 +16,14 @@ type CompanyDetailsState = {
     description: string
   };
   jobs: [] | null;
-};
+}
 
 
 class CompanyDetails extends React.Component<CompanyDetailsProps, CompanyDetailsState> {
   constructor(props: CompanyDetailsProps) {
     super(props);
     this.state = {
-      company: '',
+      company: {},
       jobs: null
     };
   }

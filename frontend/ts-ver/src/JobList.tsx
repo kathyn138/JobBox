@@ -3,8 +3,17 @@ import JobBoxApi from './JobBoxApi';
 import SearchBar from './SearchBar';
 import JobCard from './JobCard';
 
-class JobList extends React.Component {
-  constructor(props) {
+type JobListProps = {
+  applyToJob: () => void; 
+  checkApplied: (jobid: number) => boolean;
+}
+
+type JobListState = {
+  jobs: object[];
+}
+
+class JobList extends React.Component<JobListProps, JobListState> {
+  constructor(props: JobListProps) {
     super(props);
     this.state = {
       jobs: []
@@ -13,11 +22,14 @@ class JobList extends React.Component {
   }
 
   async componentDidMount() {
-    let result = await JobBoxApi.searchJobs();
+    // input empty query to satisfy ts
+    // for initial job list loading
+    // check if it still works with empty query
+    let result = await JobBoxApi.searchJobs('');
     this.setState({ jobs: result });
   }
 
-  async searchJobs(query) {
+  async searchJobs(query: string) {
     let result = await JobBoxApi.searchJobs(query);
     this.setState({ jobs: result });
   }

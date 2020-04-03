@@ -1,13 +1,28 @@
 import React from 'react';
 import ProfileForm from './ProfileForm';
 
-class Profile extends React.PureComponent {
+type ProfileProps = {
+  user: {
+    user: {
+      username: string;
+      first_name: string;
+      last_name: string;
+      email: string;
+      photo_url: string;
+    };
+  }
+  // do i need to set stricter typing here? 
+  updateUser: (user: {}) => void;
+  getCurrentUser: () => void;
+}
+
+class Profile extends React.PureComponent<ProfileProps> {
   render() {
     return (
       <div>
         <h1 className="text-center">Profile</h1>
         <ProfileForm user={this.props.user} history={this.props.history}
-          updateUser={this.props.updateUser} getCurrentUser={this.props.getCurrentUser}/>
+          updateUser={this.props.updateUser} getCurrentUser={this.props.getCurrentUser} />
       </div>
     );
   }

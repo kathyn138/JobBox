@@ -3,8 +3,19 @@ import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
 import './LoginContainer.css'
 
-class LoginContainer extends React.PureComponent {
-  constructor(props) {
+type LoginContainerProps = {
+  getCurrentUser: () => void;
+
+}
+
+type LoginContainerState = {
+  username: string; 
+  password: string;
+}
+
+class LoginContainer extends React.PureComponent<LoginContainerProps,
+  LoginContainerState> {
+  constructor(props: LoginContainerProps) {
     super(props);
     this.state = {
       username: '',
