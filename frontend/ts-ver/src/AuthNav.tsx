@@ -2,7 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './AuthNav.css';
 
-class AuthNav extends React.Component {
+type AuthNavProps ={
+  logInActive: boolean;
+  signUpActive: boolean;
+};
+
+class AuthNav extends React.Component<AuthNavProps> {
   render() {
     let logInActive = this.props.logInActive ? "login-active" : "login"
     let signUpActive = this.props.signUpActive ? "sign-up-active" : "sign-up"

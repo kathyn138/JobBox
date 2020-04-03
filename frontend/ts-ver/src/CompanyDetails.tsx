@@ -2,8 +2,25 @@ import React from 'react';
 import JobBoxApi from './JobBoxApi';
 import JobCard from './JobCard';
 
-class CompanyDetails extends React.Component {
-  constructor(props) {
+type CompanyDetailsProps = {
+  checkApplied: (jobid: number) => boolean;
+  applyToJob: (job: object) => void;
+};
+
+type CompanyDetailsState = {
+  company: {
+    jobs: [{
+      id: number
+    }];
+    name: string,
+    description: string
+  };
+  jobs: [] | null;
+};
+
+
+class CompanyDetails extends React.Component<CompanyDetailsProps, CompanyDetailsState> {
+  constructor(props: CompanyDetailsProps) {
     super(props);
     this.state = {
       company: '',

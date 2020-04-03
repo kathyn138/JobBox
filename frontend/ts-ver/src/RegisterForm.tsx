@@ -3,8 +3,20 @@ import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
 import './RegisterForm.css';
 
-class RegisterForm extends React.Component {
-  constructor(props) {
+type RegisterFormProps = {
+  getCurrentUser: () => void;
+};
+
+type RegisterFormState = {
+  username: string; 
+  password: string; 
+  firstName: string; 
+  lastName: string; 
+  email: string;
+};
+
+class RegisterForm extends React.Component<RegisterFormProps, RegisterFormState> {
+  constructor(props: RegisterFormProps) {
     super(props);
     this.state = {
       username: '',

@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class CompanyCard extends React.Component {
+type CompanyCardProps = {
+  company: {
+    logo_url: string, 
+    name: string, 
+    description: string, 
+    handle: string
+  };
+};
+
+class CompanyCard extends React.Component<CompanyCardProps> {
   render() {
     let { logo_url, name, description, handle } = this.props.company
     return (

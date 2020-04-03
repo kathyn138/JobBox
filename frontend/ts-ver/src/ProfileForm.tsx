@@ -2,8 +2,31 @@ import React from 'react';
 import JobBoxApi from './JobBoxApi';
 import './ProfileForm.css';
 
-class ProfileForm extends React.Component {
-  constructor(props) {
+type ProfileFormProps = {
+  user: {
+    user: {
+      username: string, 
+      first_name: string, 
+      last_name: string, 
+      email: string, 
+      photo_url: string
+    };
+  };
+  updateUser: ({}) => void; 
+  getCurrentUser: () => void;
+};
+
+type ProfileFormState = {
+  username: string;
+  firstName: string; 
+  lastName: string; 
+  email: string; 
+  photoURL: string; 
+  password: string;
+};
+
+class ProfileForm extends React.Component<ProfileFormProps, ProfileFormState> {
+  constructor(props: ProfileFormProps) {
     super(props);
     this.state = {
       username: this.props.user.user.username,

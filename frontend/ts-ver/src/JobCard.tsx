@@ -1,13 +1,26 @@
 import React from 'react';
 import './JobCard.css';
 
-class JobCard extends React.Component {
-  constructor(props) {
+type JobCardProps = {
+  job: {
+    title: string, 
+    salary: number, 
+    equity: number, 
+    id: number
+  };
+  applyToJob: (job: object) => void;
+  // ?? boolean instead of void bc void can't be 'tested for truthiness'
+  checkApplied: (jobid: number) => boolean; 
+}
+
+class JobCard extends React.Component<JobCardProps> {
+  constructor(props: JobCardProps) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(evt) {
+  // removed evt from here bc it's unused
+  handleClick() {
     this.props.applyToJob(this.props.job)
   }
 
