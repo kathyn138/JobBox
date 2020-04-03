@@ -20,7 +20,7 @@ type RoutesProps = {
   getCurrentUser: () => void;
   applyToJob: (job: {}) => void;
   checkApplied: (jobId: string) => void;
-  updateUser: () => void;
+  updateUser: (user: {}) => void;
 }
 
 class Routes extends React.PureComponent<RoutesProps> {

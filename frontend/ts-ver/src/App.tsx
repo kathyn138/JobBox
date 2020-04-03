@@ -5,12 +5,20 @@ import Routes from './Routes';
 import JobBoxApi from './JobBoxApi';
 import backgroundPic from './assets/landing-background.png';
 
+type AppState = {
+  currentUser: {
+    user?: {}
+  }; 
+  infoLoaded: boolean;
+}
 
-class App extends React.PureComponent {
-  constructor(props) {
+class App extends React.PureComponent<{}, AppState> {
+  constructor(props: {}) {
     super(props);
     this.state = {
-      currentUser: '',
+      // originally a string
+      // make sure it still works with {}
+      currentUser: {},
       infoLoaded: false
     }
     this.getCurrentUser = this.getCurrentUser.bind(this);
@@ -29,20 +37,20 @@ class App extends React.PureComponent {
       let userInfo = await JobBoxApi.checkToken(localStorage.token)
       this.setState({ currentUser: userInfo, infoLoaded: true });
     } else {
-      this.setState({ currentUser: '', infoLoaded: true })
+      this.setState({ currentUser: {}, infoLoaded: true })
     }
   }
 
   handleLogout() {
     localStorage.removeItem('token');
-    this.setState({ currentUser: '' });
+    this.setState({ currentUser: {} });
   }
 
-  updateUserInfo(user) {
+  updateUserInfo(user: {}) {
     this.setState({ currentUser: { user: { ...this.state.currentUser.user, ...user } } })
   }
 
-  checkAppliedJob(jobId) {
+  checkAppliedJob(jobId: string) {
     // check if job is in this.state.currentUser.jobs
     if (this.state.currentUser.user.jobs.filter(job => job.id === jobId).length === 1) {
       return true;
@@ -51,8 +59,8 @@ class App extends React.PureComponent {
     }
   }
 
-  async applyToJob(job) {
-    await JobBoxApi.applyToJob(job.id)
+  async applyToJob(job: {id: string}) {
+    await JobBoxApi.applyToJob(job.id, '')
     this.setState({
       currentUser:
       {
