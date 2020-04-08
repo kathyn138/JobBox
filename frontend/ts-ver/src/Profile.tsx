@@ -5,10 +5,10 @@ type ProfileProps = {
   user: {
     user: {
       username: string;
-      first_name: string;
-      last_name: string;
+      firstName: string;
+      lastName: string;
       email: string;
-      photo_url: string;
+      photoUrl: string;
     };
   }
   // do i need to set stricter typing here? 

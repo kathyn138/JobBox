@@ -59,10 +59,10 @@ class JoblyApi {
   }
 
   static async register(username: string, password: string,
-    first_name: string, last_name: string, email: string) {
+    firstName: string, lastName: string, email: string) {
     let res = await this.request('users', {
       username, password,
-      first_name, last_name, email
+      firstName, lastName, email
     }, "post");
     return res;
   }
@@ -74,11 +74,11 @@ class JoblyApi {
   }
 
   static async editUser(username: string, password: string,
-    first_name: string, last_name: string, photo_url: string,
+    firstName: string, lastName: string, photoUrl: string,
     email: string) {
     let res = await this.request(`users/${username}`, {
       password,
-      first_name, last_name, photo_url, email
+      firstName, lastName, photoUrl, email
     }, "patch")
     return res;
   }

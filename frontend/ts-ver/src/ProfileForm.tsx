@@ -6,10 +6,10 @@ type ProfileFormProps = {
   user: {
     user: {
       username: string, 
-      first_name: string, 
-      last_name: string, 
+      firstName: string, 
+      lastName: string, 
       email: string, 
-      photo_url: string
+      photoUrl: string
     };
   };
   updateUser: ({}) => void; 
@@ -30,10 +30,10 @@ class ProfileForm extends React.Component<ProfileFormProps, ProfileFormState> {
     super(props);
     this.state = {
       username: this.props.user.user.username,
-      firstName: this.props.user.user.first_name,
-      lastName: this.props.user.user.last_name,
+      firstName: this.props.user.user.firstName,
+      lastName: this.props.user.user.lastName,
       email: this.props.user.user.email,
-      photoURL: this.props.user.user.photo_url,
+      photoURL: this.props.user.user.photoUrl,
       password: ''
     }
     this.handleChange = this.handleChange.bind(this);

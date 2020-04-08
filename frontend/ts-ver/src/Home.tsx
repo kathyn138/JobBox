@@ -6,7 +6,7 @@ import loggedInHome from './assets/logged-in-home.png';
 type HomeProps = {
   user: {
     user: {
-      first_name: string; 
+      firstName: string; 
     };
   };
 };
@@ -20,7 +20,7 @@ class Home extends React.PureComponent<HomeProps> {
         <div className="col-6 text-center">
           {loggedIn ?
             <div className="home-logged-in">
-              <h3>Welcome Back, {this.props.user.user.first_name}!</h3>
+              <h3>Welcome Back, {this.props.user.user.firstName}!</h3>
               <span className="logged-in-msg">Let's find you a job</span>
               <Link className="btn btn-primary" id="home-jobs-button" to="/jobs">Job Postings</Link>
               <Link className="btn btn-primary" id="home-companies-button" to="/companies">Companies</Link>
