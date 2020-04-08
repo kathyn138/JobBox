@@ -12,15 +12,15 @@ import PrivateRoute from './PrivateRoute';
 
 type RoutesProps = {
   handleLogout: () => void;
-  user: {
-    user: {
-      first_name: string;
-    };
-  };
   getCurrentUser: () => void;
-  applyToJob: (job: {}) => void;
+  applyToJob: (job: {id: string}) => void;
   checkApplied: (jobId: string) => void;
   updateUser: (user: {}) => void;
+  user: {
+    user: {
+      firstName: string;
+    };
+  };
 }
 
 class Routes extends React.PureComponent<RoutesProps> {

@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import './AuthNav.css';
 
 type AuthNavProps ={
-  logInActive: boolean;
-  signUpActive?: boolean;
+  logInActive?: boolean;
+  signUpActive: boolean;
 };
 
 class AuthNav extends React.Component<AuthNavProps> {

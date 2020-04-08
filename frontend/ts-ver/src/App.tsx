@@ -7,8 +7,11 @@ import backgroundPic from './assets/landing-background.png';
 
 type AppState = {
   currentUser: {
-    user?: {}
-  }; 
+    user: {
+      jobs: { id?: string }[],
+      firstName: string
+    }
+  };
   infoLoaded: boolean;
 }
 
@@ -18,7 +21,12 @@ class App extends React.PureComponent<{}, AppState> {
     this.state = {
       // originally a string
       // make sure it still works with {}
-      currentUser: {},
+      currentUser: {
+        user: {
+          jobs: [],
+          firstName: ''
+        }
+      },
       infoLoaded: false
     }
     this.getCurrentUser = this.getCurrentUser.bind(this);
@@ -37,13 +45,27 @@ class App extends React.PureComponent<{}, AppState> {
       let userInfo = await JobBoxApi.checkToken(localStorage.token)
       this.setState({ currentUser: userInfo, infoLoaded: true });
     } else {
-      this.setState({ currentUser: {}, infoLoaded: true })
+      this.setState({
+        currentUser: {
+          user: {
+            jobs: [],
+            firstName: ''
+          }
+        }, infoLoaded: true
+      })
     }
   }
 
   handleLogout() {
     localStorage.removeItem('token');
-    this.setState({ currentUser: {} });
+    this.setState({
+      currentUser: {
+        user: {
+          jobs: [],
+          firstName: ''
+        }
+      }, infoLoaded: true
+    });
   }
 
   updateUserInfo(user: {}) {
@@ -59,7 +81,7 @@ class App extends React.PureComponent<{}, AppState> {
     }
   }
 
-  async applyToJob(job: {id: string}) {
+  async applyToJob(job: { id: string }) {
     await JobBoxApi.applyToJob(job.id, '')
     this.setState({
       currentUser:
@@ -76,15 +98,15 @@ class App extends React.PureComponent<{}, AppState> {
     if (!this.state.infoLoaded) {
       return "Loading..."
     }
-    
+
     let background = this.state.currentUser ? "" : backgroundPic;
-    
+
     return (
       <div className="app" style={{ backgroundImage: `url(${background})` }}>
         <BrowserRouter>
           <Routes user={this.state.currentUser} checkApplied={this.checkAppliedJob}
-            applyToJob={this.applyToJob} updateUser={this.updateUserInfo} 
-            getCurrentUser={this.getCurrentUser} 
+            applyToJob={this.applyToJob} updateUser={this.updateUserInfo}
+            getCurrentUser={this.getCurrentUser}
             handleLogout={this.handleLogout} />
         </BrowserRouter>
       </div>

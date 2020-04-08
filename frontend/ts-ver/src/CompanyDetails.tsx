@@ -1,19 +1,27 @@
 import React from 'react';
 import JobBoxApi from './JobBoxApi';
 import JobCard from './JobCard';
+import { RouteComponentProps } from 'react-router';
 
-type CompanyDetailsProps = {
+interface MatchParams {
+  company: string;
+}
+
+interface CompanyDetailsProps extends RouteComponentProps<MatchParams> {
   checkApplied: (jobid: number) => boolean;
   applyToJob: (job: object) => void;
 }
 
 type CompanyDetailsState = {
   company: {
-    jobs: [{
-      id: number
-    }];
-    name: string,
-    description: string
+    jobs?: {
+      title: string;
+      salary: number;
+      equity: number;
+      id: number;
+    }[];
+    name?: string,
+    description?: string
   };
   jobs: [] | null;
 }

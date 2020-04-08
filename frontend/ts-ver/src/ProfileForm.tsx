@@ -1,18 +1,19 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import JobBoxApi from './JobBoxApi';
 import './ProfileForm.css';
 
-type ProfileFormProps = {
+interface ProfileFormProps extends RouteComponentProps<any> {
   user: {
     user: {
-      username: string, 
-      firstName: string, 
-      lastName: string, 
-      email: string, 
-      photoUrl: string
+      username: string; 
+      firstName: string; 
+      lastName: string;
+      email: string;
+      photoUrl: string;
     };
   };
-  updateUser: ({}) => void; 
+  updateUser: (user: {}) => void; 
   getCurrentUser: () => void;
 };
 
@@ -40,20 +41,20 @@ class ProfileForm extends React.Component<ProfileFormProps, ProfileFormState> {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(evt) {
+  handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
+    /// is it ok to cast like this?
     this.setState({
       [evt.target.name]: evt.target.value
-    })
+    } as ProfileFormState);
   }
 
-  async handleSubmit(evt) {
+  async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
     let updatedInfo = await JobBoxApi.editUser(this.props.user.user.username, this.state.password, this.state.firstName, this.state.lastName, this.state.photoURL, this.state.email);
     this.props.updateUser(updatedInfo);
     await this.props.getCurrentUser();
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
-
 
   render() {
     return (

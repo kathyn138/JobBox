@@ -1,9 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
 import './RegisterForm.css';
 
-type RegisterFormProps = {
+interface RegisterFormProps extends RouteComponentProps<any> {
   getCurrentUser: () => void;
 };
 
@@ -29,19 +30,19 @@ class RegisterForm extends React.Component<RegisterFormProps, RegisterFormState>
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(evt) {
+  handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       [evt.target.name]: evt.target.value
-    })
+    } as RegisterFormState);
   }
 
-  async handleSubmit(evt) {
+  async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
     let token = await JobBoxApi.register(this.state.username, this.state.password,
       this.state.firstName, this.state.lastName, this.state.email);
     localStorage.setItem("token", token.token);
     await this.props.getCurrentUser();
-    this.props.history.push('/')
+    this.props.history.push('/');
   }
 
   render() {
