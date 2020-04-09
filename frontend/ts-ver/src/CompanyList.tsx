@@ -3,8 +3,17 @@ import SearchBar from './SearchBar';
 import CompanyCard from './CompanyCard';
 import JobBoxApi from './JobBoxApi';
 
-class CompanyList extends React.PureComponent {
-  constructor(props) {
+type CompanyListState = {
+  companies: {
+    logo_url: string;
+    name: string;
+    description: string;
+    handle: string;
+  }[];
+}
+
+class CompanyList extends React.PureComponent<{}, CompanyListState> {
+  constructor(props: {}) {
     super(props);
     this.state = {
       companies: []
@@ -13,11 +22,11 @@ class CompanyList extends React.PureComponent {
   }
 
   async componentDidMount() {
-    let result = await JobBoxApi.searchCompanies();
+    let result = await JobBoxApi.searchCompanies('');
     this.setState({ companies: result });
   }
 
-  async searchCompanies(query) {
+  async searchCompanies(query: string) {
     let result = await JobBoxApi.searchCompanies(query);
     this.setState({ companies: result });
   }

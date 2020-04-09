@@ -3,7 +3,7 @@ import ProfileForm from './ProfileForm';
 import { RouteComponentProps } from 'react-router-dom';
 
 /// is it ok to say any here for history?
-interface ProfileProps extends RouteComponentProps<any> {
+interface ProfileProps extends RouteComponentProps {
   user: {
     user: {
       username: string;

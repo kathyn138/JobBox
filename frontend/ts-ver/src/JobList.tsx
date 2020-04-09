@@ -4,12 +4,17 @@ import SearchBar from './SearchBar';
 import JobCard from './JobCard';
 
 type JobListProps = {
-  applyToJob: () => void; 
+  applyToJob: () => void;
   checkApplied: (jobid: number) => boolean;
 }
 
 type JobListState = {
-  jobs: object[];
+  jobs: {
+    title: string;
+    salary: number;
+    equity: number;
+    id: number;
+  }[];
 }
 
 class JobList extends React.Component<JobListProps, JobListState> {

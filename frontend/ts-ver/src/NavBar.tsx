@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, RouteComponentProps } from "react-router-dom";
 import './NavBar.css';
 
-type NavBarProps = {
+interface NavBarProps extends RouteComponentProps {
   handleLogout: () => void;
 }
 

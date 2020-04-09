@@ -19,13 +19,13 @@ class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(evt) {
+  handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       [evt.target.name]: evt.target.value
-    })
+    } as SearchBarState)
   }
 
-  handleSubmit(evt) {
+  handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
     this.props.search(this.state.search);
   }

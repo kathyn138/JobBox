@@ -1,9 +1,10 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import JobBoxApi from './JobBoxApi';
 import AuthNav from './AuthNav';
 import './LoginContainer.css'
 
-type LoginContainerProps = {
+interface LoginContainerProps extends RouteComponentProps<any> {
   getCurrentUser: () => void;
 
 }
@@ -25,13 +26,13 @@ class LoginContainer extends React.PureComponent<LoginContainerProps,
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(evt) {
+  handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       [evt.target.name]: evt.target.value
-    })
+    } as LoginContainerState)
   }
 
-  async handleSubmit(evt) {
+  async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
     let token = await JobBoxApi.login(this.state.username, this.state.password);
     localStorage.setItem("token", token.token);

@@ -3,26 +3,27 @@ import { RouteComponentProps } from 'react-router-dom';
 import JobBoxApi from './JobBoxApi';
 import './ProfileForm.css';
 
-interface ProfileFormProps extends RouteComponentProps<any> {
+/// do i need the <any> ?
+interface ProfileFormProps extends RouteComponentProps {
   user: {
     user: {
-      username: string; 
-      firstName: string; 
+      username: string;
+      firstName: string;
       lastName: string;
       email: string;
       photoUrl: string;
     };
   };
-  updateUser: (user: {}) => void; 
+  updateUser: (user: {}) => void;
   getCurrentUser: () => void;
 };
 
 type ProfileFormState = {
   username: string;
-  firstName: string; 
-  lastName: string; 
-  email: string; 
-  photoURL: string; 
+  firstName: string;
+  lastName: string;
+  email: string;
+  photoURL: string;
   password: string;
 };
 
@@ -50,7 +51,9 @@ class ProfileForm extends React.Component<ProfileFormProps, ProfileFormState> {
 
   async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
-    let updatedInfo = await JobBoxApi.editUser(this.props.user.user.username, this.state.password, this.state.firstName, this.state.lastName, this.state.photoURL, this.state.email);
+    let updatedInfo = await JobBoxApi.editUser(this.props.user.user.username,
+      this.state.password, this.state.firstName, this.state.lastName,
+      this.state.photoURL, this.state.email);
     this.props.updateUser(updatedInfo);
     await this.props.getCurrentUser();
     this.props.history.push('/');
