@@ -1,12 +1,33 @@
 import axios from 'axios';
-import jwt from 'jsonwebtoken'
+import jwt from 'jsonwebtoken';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 
-class JoblyApi {
-  static async request(endpoint: string, paramsOrData = {}, verb = "get") {
+interface decodedToken {
+  username: string
+}
 
-    paramsOrData._token = localStorage.token;
+interface axiosConfig {
+  [x: string]: string
+}
+
+class JoblyApi {
+  static async request(endpoint: string, paramsOrData?:
+    {
+      _token?: string,
+      search?: string, 
+      username?: string, 
+      password?: string,
+      firstName?: string, 
+      lastName?: string, 
+      photoUrl?: string, 
+      email?: string,
+      state?: string
+    }, verb = "get") {
+
+    paramsOrData!._token = localStorage.token;
+    /// is it ok to use ! non null assertion operator here? 
+    // do i know that it wont be null or undefined? 
 
     console.debug("API Call:", endpoint, paramsOrData, verb);
 
@@ -15,10 +36,13 @@ class JoblyApi {
         method: verb,
         url: `${BASE_URL}/${endpoint}`,
         [verb === "get" ? "params" : "data"]: paramsOrData
-      })).data;
+      } as axiosConfig)).data;
       // axios sends query string data via the "params" key,
       // and request body data via the "data" key,
       // so the key we need depends on the HTTP verb
+
+      /// how does casting fix this lolll especially when it's .data? 
+      // figure out what is returned first
     }
 
     catch (err) {
@@ -68,7 +92,7 @@ class JoblyApi {
   }
 
   static async checkToken(token: string) {
-    let username = jwt.decode(token).username
+    let username = (jwt.decode(token) as decodedToken).username
     let res = await this.request(`users/${username}`)
     return res;
   }
