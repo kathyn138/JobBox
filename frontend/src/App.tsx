@@ -19,8 +19,6 @@ class App extends React.PureComponent<{}, AppState> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      // originally a string
-      // make sure it still works with {}
       currentUser: {
         user: {
           jobs: [],
@@ -28,7 +26,7 @@ class App extends React.PureComponent<{}, AppState> {
         }
       },
       infoLoaded: false
-    }
+    };
     this.getCurrentUser = this.getCurrentUser.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
     this.updateUserInfo = this.updateUserInfo.bind(this);
@@ -42,7 +40,7 @@ class App extends React.PureComponent<{}, AppState> {
 
   async getCurrentUser() {
     if (localStorage.getItem('token')) {
-      let userInfo = await JobBoxApi.checkToken(localStorage.token)
+      let userInfo = await JobBoxApi.checkToken(localStorage.token);
       this.setState({ currentUser: userInfo, infoLoaded: true });
     } else {
       this.setState({
@@ -52,7 +50,7 @@ class App extends React.PureComponent<{}, AppState> {
             firstName: ''
           }
         }, infoLoaded: true
-      })
+      });
     }
   }
 
@@ -69,7 +67,7 @@ class App extends React.PureComponent<{}, AppState> {
   }
 
   updateUserInfo(user: {}) {
-    this.setState({ currentUser: { user: { ...this.state.currentUser.user, ...user } } })
+    this.setState({ currentUser: { user: { ...this.state.currentUser.user, ...user } } });
   }
 
   checkAppliedJob(jobId: string) {
@@ -82,7 +80,7 @@ class App extends React.PureComponent<{}, AppState> {
   }
 
   async applyToJob(job: { id: string }) {
-    await JobBoxApi.applyToJob(job.id, '')
+    await JobBoxApi.applyToJob(job.id, '');
     this.setState({
       currentUser:
       {
@@ -91,15 +89,15 @@ class App extends React.PureComponent<{}, AppState> {
           jobs: [...this.state.currentUser.user.jobs, job]
         }
       }
-    })
+    });
   }
 
   render() {
     if (!this.state.infoLoaded) {
-      return "Loading..."
+      return "Loading...";
     }
 
-    let background = this.state.currentUser ? "" : backgroundPic;
+    let background = this.state.currentUser ? backgroundPic: "" ;
 
     return (
       <div className="app" style={{ backgroundImage: `url(${background})` }}>
@@ -110,7 +108,7 @@ class App extends React.PureComponent<{}, AppState> {
             handleLogout={this.handleLogout} />
         </BrowserRouter>
       </div>
-    )
+    );
 
   }
 }
