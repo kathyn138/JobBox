@@ -1,6 +1,5 @@
 import React from 'react';
-// import { RouteComponentProps } from 'react-router-dom';
-import JobBoxApi from './JobBoxApi';
+import JobBoxApi from '../JobBoxApi';
 import './ProfileForm.css';
 import { History } from 'history';
 
@@ -44,7 +43,6 @@ class ProfileForm extends React.Component<ProfileFormProps, ProfileFormState> {
   }
 
   handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
-    /// is it ok to cast like this?
     this.setState({
       [evt.target.name]: evt.target.value
     } as ProfileFormState);

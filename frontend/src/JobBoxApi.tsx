@@ -27,7 +27,7 @@ class JoblyApi {
 
     paramsOrData!._token = localStorage.token;
     /// is it ok to use ! non null assertion operator here? 
-    // do i know that it wont be null or undefined? 
+    // it won't be called until it's defined
 
     console.debug("API Call:", endpoint, paramsOrData, verb);
 
@@ -40,9 +40,6 @@ class JoblyApi {
       // axios sends query string data via the "params" key,
       // and request body data via the "data" key,
       // so the key we need depends on the HTTP verb
-
-      /// how does casting fix this lolll especially when it's .data? 
-      // figure out what is returned first
     }
 
     catch (err) {

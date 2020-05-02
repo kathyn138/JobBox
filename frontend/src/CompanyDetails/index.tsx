@@ -1,6 +1,6 @@
 import React from 'react';
-import JobBoxApi from './JobBoxApi';
-import JobCard from './JobCard';
+import JobBoxApi from '../JobBoxApi';
+import JobCard from '../JobCard';
 import { RouteComponentProps } from 'react-router';
 
 interface MatchParams {
@@ -38,7 +38,7 @@ class CompanyDetails extends React.Component<CompanyDetailsProps, CompanyDetails
 
   async componentDidMount() {
     let result = await JobBoxApi.getCompany(this.props.match.params.company);
-    this.setState({ company: result })
+    this.setState({ company: result });
   }
 
   render() {

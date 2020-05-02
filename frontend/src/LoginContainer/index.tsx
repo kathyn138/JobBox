@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import JobBoxApi from './JobBoxApi';
-import AuthNav from './AuthNav';
-import './LoginContainer.css'
+import JobBoxApi from '../JobBoxApi';
+import AuthNav from '../AuthNav';
+import './LoginContainer.css';
 
 interface LoginContainerProps extends RouteComponentProps<any> {
   getCurrentUser: () => void;
@@ -21,7 +21,7 @@ class LoginContainer extends React.PureComponent<LoginContainerProps,
     this.state = {
       username: '',
       password: ''
-    }
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,7 +29,7 @@ class LoginContainer extends React.PureComponent<LoginContainerProps,
   handleChange(evt: React.ChangeEvent<HTMLInputElement>) {
     this.setState({
       [evt.target.name]: evt.target.value
-    } as LoginContainerState)
+    } as LoginContainerState);
   }
 
   async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {

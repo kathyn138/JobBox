@@ -1,7 +1,7 @@
 import React from 'react';
-import JobBoxApi from './JobBoxApi';
-import SearchBar from './SearchBar';
-import JobCard from './JobCard';
+import JobBoxApi from '../JobBoxApi';
+import SearchBar from '../SearchBar';
+import JobCard from '../JobCard';
 
 type JobListProps = {
   applyToJob: () => void;
@@ -27,9 +27,6 @@ class JobList extends React.Component<JobListProps, JobListState> {
   }
 
   async componentDidMount() {
-    // input empty query to satisfy ts
-    // for initial job list loading
-    // check if it still works with empty query
     let result = await JobBoxApi.searchJobs('');
     this.setState({ jobs: result });
   }
@@ -42,7 +39,7 @@ class JobList extends React.Component<JobListProps, JobListState> {
   render() {
     let jobs = this.state.jobs.length ? this.state.jobs.map(job => <JobCard
       applyToJob={this.props.applyToJob} checkApplied={this.props.checkApplied}
-      job={job} key={job.id} />) : "Sorry, no results were found!"
+      job={job} key={job.id} />) : "Sorry, no results were found!";
     return (
       <div className="row justify-content-center align-items-center">
         <div className="col-8">

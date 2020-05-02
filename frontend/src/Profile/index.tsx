@@ -1,8 +1,7 @@
 import React from 'react';
-import ProfileForm from './ProfileForm';
+import ProfileForm from '../ProfileForm';
 import { RouteComponentProps } from 'react-router-dom';
 
-/// is it ok to say any here for history?
 interface ProfileProps extends RouteComponentProps {
   user: {
     user: {
@@ -13,7 +12,7 @@ interface ProfileProps extends RouteComponentProps {
       photoUrl: string;
     };
   };
-  // do i need to set stricter typing here? 
+  /// do i need to set stricter typing here? 
   updateUser: (user: {}) => void;
   getCurrentUser: () => void;
 }

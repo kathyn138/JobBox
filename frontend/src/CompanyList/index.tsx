@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchBar from './SearchBar';
-import CompanyCard from './CompanyCard';
-import JobBoxApi from './JobBoxApi';
+import SearchBar from '../SearchBar';
+import CompanyCard from '../CompanyCard';
+import JobBoxApi from '../JobBoxApi';
 
 type CompanyListState = {
   companies: {

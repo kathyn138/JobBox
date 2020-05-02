@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import JobBoxApi from './JobBoxApi';
-import AuthNav from './AuthNav';
+import JobBoxApi from '../JobBoxApi';
+import AuthNav from '../AuthNav';
 import './RegisterForm.css';
 
 interface RegisterFormProps extends RouteComponentProps<any> {

@@ -9,8 +9,8 @@ type JobCardProps = {
     id: number
   };
   applyToJob: (job: object) => void;
-  // ?? boolean instead of void bc void can't be 'tested for truthiness'
   checkApplied: (jobid: number) => boolean;
+  // boolean instead of void bc void can't be 'tested for truthiness'
 }
 
 class JobCard extends React.Component<JobCardProps> {
@@ -19,13 +19,12 @@ class JobCard extends React.Component<JobCardProps> {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  // removed evt from here bc it's unused
   handleClick() {
-    this.props.applyToJob(this.props.job)
+    this.props.applyToJob(this.props.job);
   }
 
   render() {
-    let { title, salary, equity } = this.props.job
+    let { title, salary, equity } = this.props.job;
     return (
       <div className="card mb-3">
         <div className="row no-gutters">
