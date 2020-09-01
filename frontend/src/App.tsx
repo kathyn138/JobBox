@@ -97,7 +97,7 @@ class App extends React.PureComponent<{}, AppState> {
       return "Loading...";
     }
 
-    let background = this.state.currentUser ? backgroundPic: "" ;
+    let background = this.state.currentUser ? "https://cdn.discordapp.com/attachments/709285942430531650/750164905486712862/landing-background.png": "" ;
 
     return (
       <div className="app" style={{ backgroundImage: `url(${background})` }}>
