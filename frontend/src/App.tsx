@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter } from "react-router-dom";
 import Routes from './Routes';
 import JobBoxApi from './JobBoxApi';
-import backgroundPic from './assets/landing-background.png';
 
 type AppState = {
   currentUser: {
@@ -97,7 +96,10 @@ class App extends React.PureComponent<{}, AppState> {
       return "Loading...";
     }
 
-    let background = this.state.currentUser ? "https://cdn.discordapp.com/attachments/709285942430531650/750164905486712862/landing-background.png": "" ;
+    // if user is not logged in, show landing page background
+    // if logged in, don't show background 
+
+    let background = Object.keys(this.state.currentUser.user).length > 2 ? "": "https://cdn.discordapp.com/attachments/709285942430531650/750164905486712862/landing-background.png" ;
 
     return (
       <div className="app" style={{ backgroundImage: `url(${background})` }}>
