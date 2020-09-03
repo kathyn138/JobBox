@@ -15,19 +15,21 @@ class JoblyApi {
   static async request(endpoint: string, paramsOrData?:
     {
       _token?: string,
-      search?: string, 
-      username?: string, 
+      search?: string,
+      username?: string,
       password?: string,
-      firstName?: string, 
-      lastName?: string, 
-      photoUrl?: string, 
+      firstName?: string,
+      lastName?: string,
+      photoUrl?: string,
       email?: string,
       state?: string
     }, verb = "get") {
 
-    paramsOrData!._token = localStorage.token;
-    /// is it ok to use ! non null assertion operator here? 
-    // it won't be called until it's defined
+    if (!paramsOrData) {
+      paramsOrData = {};
+    }
+
+    paramsOrData._token = localStorage.token;
 
     console.debug("API Call:", endpoint, paramsOrData, verb);
 
@@ -91,7 +93,15 @@ class JoblyApi {
   static async checkToken(token: string) {
     let username = (jwt.decode(token) as decodedToken).username;
     let res = await this.request(`users/${username}`);
-    return res;
+
+    let { email, first_name, jobs, last_name, photo_url } = res.user;
+    let formattedRes = {
+      'user': {
+        email, jobs, 'firstName': first_name,
+        'lastName': last_name, 'photoURL': photo_url, 'username': res.user.username
+      }
+    };
+    return formattedRes;
   }
 
   static async editUser(username: string, password: string,
