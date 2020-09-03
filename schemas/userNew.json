@@ -21,7 +21,7 @@
       "maxLength": 55,
       "examples": ["foo123"]
     },
-    "first_name": {
+    "firstName": {
       "$id": "/properties/first_name",
       "type": "string",
       "title": "The First_name Schema ",
@@ -30,7 +30,7 @@
       "maxLength": 55,
       "examples": ["Michael"]
     },
-    "last_name": {
+    "lastName": {
       "$id": "/properties/last_name",
       "type": "string",
       "title": "The Last_name Schema ",
@@ -39,7 +39,7 @@
       "maxLength": 55,
       "examples": ["Hueter"]
     },
-    "photo_url": {
+    "photoURL": {
       "$id": "/properties/photo",
       "type": "string",
       "title": "The Photo Schema ",
