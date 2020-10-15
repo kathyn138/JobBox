@@ -68,12 +68,12 @@ class User {
         [
           data.username,
           hashedPassword,
-          data.first_name,
-          data.last_name,
+          data.firstName,
+          data.lastName,
           data.email,
           data.photo_url
         ]);
-
+      // console.log('THIS IS SUBMITTED', data.first_name)
     return result.rows[0];
   }
 
