@@ -1,7 +1,7 @@
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001"; 
 
 interface decodedToken {
   username: string
@@ -116,6 +116,11 @@ class JoblyApi {
 
   static async applyToJob(id: string, state: string) {
     await this.request(`jobs/${id}/apply`, { state }, 'post');
+  }
+
+  static async wakeBackend() {
+    let res = await this.request('');
+    return res;
   }
 }
 
