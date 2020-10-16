@@ -22,6 +22,7 @@ app.use("/companies", companiesRoutes);
 app.use("/jobs", jobsRoutes);
 app.use("/users", usersRoutes);
 app.use("/", authRoutes);
+console.log('in app')
 
 /** 404 handler */
 
