@@ -119,7 +119,7 @@ class JoblyApi {
   }
 
   static async wakeBackend() {
-    let res = await this.request('');
+    let res = await this.request('ping');
     return res;
   }
 }
