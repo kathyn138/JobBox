@@ -4,9 +4,13 @@ JobBox is a full stack job posting and job application website built with React,
 
 Users can create an account, log-in, search for companies, search for jobs and apply to them. 
 
-JobBox is [live on Heroku](https://jobbox-io.herokuapp.com).
+JobBox is [live on Netlify](https://jobbox.netlify.app/).
 
 Front end unit tests are written with Enzyme.
+
+Test user information:
+- Username: testuser123
+- Password: testuser123
 
 ![Alt text](frontend/src/assets/jobbox-demo.gif "Demo Gif")
 ![Alt text](frontend/src/assets/searchedjobs-screenshot?raw=true "Searched Jobs")
