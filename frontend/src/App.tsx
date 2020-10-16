@@ -35,6 +35,8 @@ class App extends React.PureComponent<{}, AppState> {
 
   async componentDidMount() {
     await this.getCurrentUser();
+    let wake = await JobBoxApi.wakeBackend();
+    console.log(wake);
   }
 
   async getCurrentUser() {
