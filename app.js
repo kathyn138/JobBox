@@ -17,11 +17,13 @@ const usersRoutes = require("./routes/users");
 const companiesRoutes = require("./routes/companies");
 const jobsRoutes = require("./routes/jobs");
 const authRoutes = require("./routes/auth");
+const wakeRoutes = require("./routes/wake");
 
 app.use("/companies", companiesRoutes);
 app.use("/jobs", jobsRoutes);
 app.use("/users", usersRoutes);
 app.use("/", authRoutes);
+app.use("/", wakeRoutes);
 console.log('in app')
 
 /** 404 handler */
