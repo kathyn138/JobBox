@@ -23,7 +23,7 @@ app.use("/companies", companiesRoutes);
 app.use("/jobs", jobsRoutes);
 app.use("/users", usersRoutes);
 app.use("/", authRoutes);
-app.use("/", wakeRoutes);
+app.use("/ping", wakeRoutes);
 console.log('in app')
 
 /** 404 handler */
