@@ -4,15 +4,19 @@
 const { Client } = require("pg");
 const { DB_URI } = require("./config");
 
-let config = {
-  connectionString: DB_URI
-};
+let config;
 
 if (process.env.DATABASE_URL) {
-  config['ssl'] = {
-    rejectUnauthorized: false
+  config = {
+    connectionString: DB_URI,
+    ssl: {
+      rejectUnauthorized: false
+    }
   };
+} else {
+  config = { connectionString: DB_URI }
 }
+
 console.log('this is', config)
 const client = new Client(config);
 
