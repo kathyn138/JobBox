@@ -8,7 +8,7 @@ let config;
 
 if (process.env.DATABASE_URL) {
   config = {
-    connectionString: DB_URI,
+    connectionString: process.env.DATABASE_URL,
     ssl: {
       rejectUnauthorized: false
     }
