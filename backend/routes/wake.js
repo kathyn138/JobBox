@@ -5,7 +5,7 @@ const router = new express.Router();
 
 router.get("/", async function (req, res, next) {
   try {
-    return res.json("backend is awake");
+    return res.json("backend is awake!");
   } catch (err) {
     return next(err);
   }
