@@ -4,11 +4,18 @@
 const { Client } = require("pg");
 const { DB_URI } = require("./config");
 
-const client = new Client({
+let config = {
   connectionString: DB_URI
-});
+};
+
+if (process.env.DATABASE_URL) {
+  config['ssl'] = {
+    rejectUnauthorized: false
+  };
+}
+
+const client = new Client(config);
 
 client.connect();
-
 
 module.exports = client;
