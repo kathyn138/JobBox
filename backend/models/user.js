@@ -44,6 +44,7 @@ class User {
   /** Register user with data. Returns new user data. */
 
   static async register(data) {
+    console.log('inside user model')
     const duplicateCheck = await db.query(
         `SELECT username 
             FROM users 
@@ -57,9 +58,9 @@ class User {
       err.status = 409;
       throw err;
     }
-
+    console.log('passed duplicate check')
     const hashedPassword = await bcrypt.hash(data.password, BCRYPT_WORK_FACTOR);
-
+    console.log('before insert into db')
     const result = await db.query(
         `INSERT INTO users 
             (username, password, first_name, last_name, email, photo_url) 
@@ -73,7 +74,7 @@ class User {
           data.email,
           data.photo_url
         ]);
-      // console.log('THIS IS SUBMITTED', data.first_name)
+      console.log('THIS IS SUBMITTED RESULT', data.first_name)
     return result.rows[0];
   }
 
