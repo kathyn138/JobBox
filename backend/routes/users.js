@@ -42,21 +42,19 @@ router.get("/:username", authRequired, async function(req, res, next) {
 /** POST / {userdata}  => {token: token} */
 
 router.post("/", async function(req, res, next) {
-  console.log('outside try')
+
   try {
     delete req.body._token;
-    console.log('before validation')
+
     const validation = validate(req.body, userNewSchema);
-    console.log('after validation')
 
     if (!validation.valid) {
-      console.log('inside the validation if statement')
       return next({
         status: 400,
         message: validation.errors.map(e => e.stack)
       });
     }
-    console.log('before register')
+
     const newUser = await User.register(req.body);
     const token = createToken(newUser);
     return res.status(201).json({ token });

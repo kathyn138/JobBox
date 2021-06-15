@@ -17,7 +17,6 @@ if (process.env.DATABASE_URL) {
   config = { connectionString: DB_URI }
 }
 
-console.log('this is', config)
 const client = new Client(config);
 
 client.connect();
