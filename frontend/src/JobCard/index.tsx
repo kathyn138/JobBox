@@ -23,8 +23,10 @@ class JobCard extends React.Component<JobCardProps> {
     this.props.applyToJob(this.props.job);
   }
 
+  
   render() {
     let { title, salary, equity } = this.props.job;
+
     return (
       <div className="card mb-3">
         <div className="row no-gutters">
