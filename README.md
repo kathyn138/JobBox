@@ -16,11 +16,11 @@ Test user information:
 ![Alt text](frontend/src/assets/searchedjobs-screenshot?raw=true "Searched Jobs")
 
 ## Table Of Contents
-- [Installation](https://github.com/kathyn262/JobBox#installation)
-- [Testing](https://github.com/kathyn262/JobBox#testing)
-- [Technologies](https://github.com/kathyn262/JobBox#technologies)
-- [Component Hierarchy](https://github.com/kathyn262/JobBox#component-hierarchy)
-- [Future Implementation](https://github.com/kathyn262/JobBox#future-implementation)
+- [Installation](https://github.com/kathyn138/JobBox#installation)
+- [Testing](https://github.com/kathyn138/JobBox#testing)
+- [Technologies](https://github.com/kathyn138/JobBox#technologies)
+- [Component Hierarchy](https://github.com/kathyn138/JobBox#component-hierarchy)
+- [Future Implementation](https://github.com/kathyn138/JobBox#future-implementation)
 
 ## Installation 
 
