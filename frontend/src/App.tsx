@@ -71,13 +71,10 @@ class App extends React.PureComponent<{}, AppState> {
     this.setState({ currentUser: { user: { ...this.state.currentUser.user, ...user } } });
   }
 
+
+  // check if job is in this.state.currentUser.jobs
   checkAppliedJob(jobId: string) {
-    // check if job is in this.state.currentUser.jobs
-    if (this.state.currentUser.user.jobs.filter(job => job.id === jobId).length === 1) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.state.currentUser.user.jobs.filter(job => job.id === jobId).length === 1;
   }
 
   async applyToJob(job: { id: string }) {
