@@ -1,6 +1,3 @@
-/** Express app for jobly. */
-
-
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -24,7 +21,6 @@ app.use("/jobs", jobsRoutes);
 app.use("/users", usersRoutes);
 app.use("/", authRoutes);
 app.use("/ping", wakeRoutes);
-console.log('in app')
 
 /** 404 handler */
 
