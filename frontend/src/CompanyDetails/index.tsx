@@ -45,7 +45,11 @@ class CompanyDetails extends React.Component<CompanyDetailsProps, CompanyDetails
     let jobs = this.state.company.jobs ?
       this.state.company.jobs.map(job => <JobCard applyToJob={this.props.applyToJob}
         checkApplied={this.props.checkApplied} job={job} key={job.id} />) :
-      "Loading...";
+        <div className="loading-msg d-flex justify-content-center align-items-center h-100">
+        <div className="spinner-border text-primary" role="status">
+          <span className="sr-only">Loading...</span>
+        </div>
+      </div>;
     return (
       <div className="row justify-content-center align-items-center">
         <div className="col-8">
