@@ -45,9 +45,11 @@ class JoblyApi {
     }
 
     catch (err) {
-      console.error("API Error:", err.response);
-      let message = err.response.data.message;
-      throw Array.isArray(message) ? message : [message];
+      if (err instanceof Error) {
+        let errorMessage = err.message;
+        console.error("API Error:", errorMessage);
+        throw errorMessage;
+      }
     }
   }
 
