@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 import JobBoxApi from './JobBoxApi';
+import landingBg from './assets/landing-background.png';
 
 type AppState = {
   currentUser: {
@@ -112,7 +113,7 @@ class App extends React.PureComponent<{}, AppState> {
     let background =
       Object.keys(this.state.currentUser.user).length > 2
         ? ''
-        : 'https://cdn.discordapp.com/attachments/709285942430531650/750164905486712862/landing-background.png';
+        : landingBg;
 
     return (
       <div className="app" style={{ backgroundImage: `url(${background})` }}>
