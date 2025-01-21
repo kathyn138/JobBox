@@ -88,3 +88,4 @@ App
 - Display message on front end for wrong user credentials 
 - Add visual indication for current page user is on 
 - Back end testing 
+- Add themes

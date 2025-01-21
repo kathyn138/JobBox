@@ -1,5 +1,3 @@
-/** Database setup for jobly. */
-
 const { Client } = require("pg");
 
 let config;

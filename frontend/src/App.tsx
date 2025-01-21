@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 import JobBoxApi from './JobBoxApi';
+import landingBg from './assets/landing-background.png';
 
 type AppState = {
   currentUser: {
     user: {
-      jobs: { id?: string }[],
-      firstName: string
-    }
+      jobs: { id?: string }[];
+      firstName: string;
+    };
   };
   infoLoaded: boolean;
-}
+};
 
 class App extends React.PureComponent<{}, AppState> {
   constructor(props: {}) {
@@ -21,10 +22,10 @@ class App extends React.PureComponent<{}, AppState> {
       currentUser: {
         user: {
           jobs: [],
-          firstName: ''
-        }
+          firstName: '',
+        },
       },
-      infoLoaded: false
+      infoLoaded: false,
     };
     this.getCurrentUser = this.getCurrentUser.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
@@ -48,9 +49,10 @@ class App extends React.PureComponent<{}, AppState> {
         currentUser: {
           user: {
             jobs: [],
-            firstName: ''
-          }
-        }, infoLoaded: true
+            firstName: '',
+          },
+        },
+        infoLoaded: true,
       });
     }
   }
@@ -61,56 +63,72 @@ class App extends React.PureComponent<{}, AppState> {
       currentUser: {
         user: {
           jobs: [],
-          firstName: ''
-        }
-      }, infoLoaded: true
+          firstName: '',
+        },
+      },
+      infoLoaded: true,
     });
   }
 
   updateUserInfo(user: {}) {
-    this.setState({ currentUser: { user: { ...this.state.currentUser.user, ...user } } });
+    this.setState({
+      currentUser: { user: { ...this.state.currentUser.user, ...user } },
+    });
   }
-
 
   // check if job is in this.state.currentUser.jobs
   checkAppliedJob(jobId: string) {
-    return this.state.currentUser.user.jobs.filter(job => job.id === jobId).length === 1;
+    return (
+      this.state.currentUser.user.jobs.filter((job) => job.id === jobId)
+        .length === 1
+    );
   }
 
   async applyToJob(job: { id: string }) {
     await JobBoxApi.applyToJob(job.id, '');
     this.setState({
-      currentUser:
-      {
+      currentUser: {
         user: {
           ...this.state.currentUser.user,
-          jobs: [...this.state.currentUser.user.jobs, job]
-        }
-      }
+          jobs: [...this.state.currentUser.user.jobs, job],
+        },
+      },
     });
   }
 
   render() {
     if (!this.state.infoLoaded) {
-      return "Loading...";
+      return (
+        <div className="loading-msg d-flex justify-content-center align-items-center h-100">
+          <div className="spinner-border text-primary" role="status">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      );
     }
 
     // if user is not logged in, show landing page background
-    // if logged in, don't show background 
+    // if logged in, don't show background
 
-    let background = Object.keys(this.state.currentUser.user).length > 2 ? "": "https://cdn.discordapp.com/attachments/709285942430531650/750164905486712862/landing-background.png" ;
+    let background =
+      Object.keys(this.state.currentUser.user).length > 2
+        ? ''
+        : landingBg;
 
     return (
       <div className="app" style={{ backgroundImage: `url(${background})` }}>
         <BrowserRouter>
-          <Routes user={this.state.currentUser} checkApplied={this.checkAppliedJob}
-            applyToJob={this.applyToJob} updateUser={this.updateUserInfo}
+          <Routes
+            user={this.state.currentUser}
+            checkApplied={this.checkAppliedJob}
+            applyToJob={this.applyToJob}
+            updateUser={this.updateUserInfo}
             getCurrentUser={this.getCurrentUser}
-            handleLogout={this.handleLogout} />
+            handleLogout={this.handleLogout}
+          />
         </BrowserRouter>
       </div>
     );
-
   }
 }
 

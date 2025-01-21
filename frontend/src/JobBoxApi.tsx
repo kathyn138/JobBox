@@ -1,5 +1,5 @@
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
+import { jwtDecode } from 'jwt-decode';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001"; 
 
@@ -45,9 +45,11 @@ class JoblyApi {
     }
 
     catch (err) {
-      console.error("API Error:", err.response);
-      let message = err.response.data.message;
-      throw Array.isArray(message) ? message : [message];
+      if (err instanceof Error) {
+        let errorMessage = err.message;
+        console.error("API Error:", errorMessage);
+        throw errorMessage;
+      }
     }
   }
 
@@ -91,7 +93,7 @@ class JoblyApi {
   }
 
   static async checkToken(token: string) {
-    let username = (jwt.decode(token) as decodedToken).username;
+    let username = (jwtDecode(token) as decodedToken).username;
     let res = await this.request(`users/${username}`);
 
     let { email, first_name, jobs, last_name, photo_url } = res.user;
