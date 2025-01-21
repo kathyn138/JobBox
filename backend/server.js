@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 // Start server
 
-=======
->>>>>>> master
 const app = require('./app');
 const { PORT } = require('./config');
 
