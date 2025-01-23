@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001"; 
+
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3001'; 
 
 interface decodedToken {
   username: string
@@ -14,7 +15,7 @@ interface axiosConfig {
 class JoblyApi {
   static async request(endpoint: string, paramsOrData?:
     {
-      _token?: string,
+      token?: string,
       search?: string,
       username?: string,
       password?: string,
@@ -23,39 +24,40 @@ class JoblyApi {
       photoUrl?: string,
       email?: string,
       state?: string
-    }, verb = "get") {
+    }, verb = 'get'): Promise<any> {
 
     if (!paramsOrData) {
       paramsOrData = {};
     }
 
-    paramsOrData._token = localStorage.token;
+    paramsOrData.token = localStorage.token;
 
-    console.debug("API Call:", endpoint, paramsOrData, verb);
+    console.debug('API Call:', endpoint, paramsOrData, verb);
 
     try {
       return (await axios({
         method: verb,
         url: `${BASE_URL}/${endpoint}`,
-        [verb === "get" ? "params" : "data"]: paramsOrData
+        [verb === 'get' ? 'params' : 'data']: paramsOrData
       } as axiosConfig)).data;
-      // axios sends query string data via the "params" key,
-      // and request body data via the "data" key,
+      // axios sends query string data via the 'params' key,
+      // and request body data via the 'data' key,
       // so the key we need depends on the HTTP verb
     }
 
     catch (err) {
       if (err instanceof Error) {
         let errorMessage = err.message;
-        console.error("API Error:", errorMessage);
+        console.error('API Error:', errorMessage);
         throw errorMessage;
       }
+      throw new Error('An unknown error occurred');
     }
   }
 
   static async getCompany(handle: string) {
     let res = await this.request(`companies/${handle}`);
-    return res.company;
+    return res.data.company;
   }
 
   static async searchCompanies(query: string) {
@@ -65,7 +67,7 @@ class JoblyApi {
     } else {
       res = await this.request(`companies`);
     }
-    return res.companies;
+    return res.data.companies;
   }
 
   static async searchJobs(query: string) {
@@ -75,11 +77,11 @@ class JoblyApi {
     } else {
       res = await this.request(`jobs`);
     }
-    return res.jobs;
+    return res.data.jobs;
   }
 
   static async login(username: string, password: string) {
-    let res = await this.request(`login`, { username, password }, "post");
+    let res = await this.request(`login`, { username, password }, 'post');
     return res;
   }
 
@@ -88,7 +90,7 @@ class JoblyApi {
     let res = await this.request('users', {
       username, password,
       firstName, lastName, email
-    }, "post");
+    }, 'post');
     return res;
   }
 
@@ -112,7 +114,7 @@ class JoblyApi {
     let res = await this.request(`users/${username}`, {
       password,
       firstName, lastName, photoUrl, email
-    }, "patch");
+    }, 'patch');
     return res;
   }
 
