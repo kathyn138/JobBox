@@ -38,9 +38,9 @@ class RegisterForm extends React.Component<RegisterFormProps, RegisterFormState>
 
   async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
-    let token = await JobBoxApi.register(this.state.username, this.state.password,
+    let res = await JobBoxApi.register(this.state.username, this.state.password,
       this.state.firstName, this.state.lastName, this.state.email);
-    localStorage.setItem("token", token.token);
+    localStorage.setItem("token", res.data.token);
     await this.props.getCurrentUser();
     this.props.history.push('/');
   }
