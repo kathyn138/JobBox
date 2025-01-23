@@ -32,7 +32,7 @@ class JoblyApi {
 
     paramsOrData.token = localStorage.token;
 
-    console.debug('API Call:', endpoint, paramsOrData, verb);
+    // console.debug('API Call:', endpoint, paramsOrData, verb);
 
     try {
       return (await axios({
