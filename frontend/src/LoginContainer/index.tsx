@@ -34,8 +34,8 @@ class LoginContainer extends React.PureComponent<LoginContainerProps,
 
   async handleSubmit(evt: React.FormEvent<HTMLFormElement>) {
     evt.preventDefault();
-    let token = await JobBoxApi.login(this.state.username, this.state.password);
-    localStorage.setItem("token", token.token);
+    let res = await JobBoxApi.login(this.state.username, this.state.password);
+    localStorage.setItem("token", res.token);
     await this.props.getCurrentUser();
     this.props.history.push('/');
   }
