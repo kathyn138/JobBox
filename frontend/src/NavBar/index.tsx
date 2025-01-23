@@ -36,7 +36,7 @@ class NavBar extends React.PureComponent<NavBarProps> {
       }
 
       return (
-        <li className="nav-item">
+        <li className="nav-item" key={i.path}>
           <NavLink className="nav-link" to={`/${i.path}`} onClick={fn}>
             {i.name}
           </NavLink>
